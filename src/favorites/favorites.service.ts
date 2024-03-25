@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { Favorites } from 'src/models';
+import { Favorites } from '../models';
 import { FavoritesResponse } from './favorites.models';
-import { ArtistService } from 'src/artist/artist.service';
-import { AlbumService } from 'src/album/album.service';
-import { TrackService } from 'src/track/track.service';
+import { ArtistService } from '../artist/artist.service';
+import { AlbumService } from '../album/album.service';
+import { TrackService } from '../track/track.service';
 import {
   checkExists,
   checkId,
   isNotNull,
   throwUnprocessableEntity,
-} from 'src/utils';
+} from '../utils';
 
 @Injectable()
 export class FavoritesService {

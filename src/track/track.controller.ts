@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import { TrackService } from './track.service';
 import { Track, createTrackSchema } from './track.models';
-import { checkId } from 'src/utils';
+import { checkId } from '../utils';
 import { ZodValidationPipe, createZodDto } from 'nestjs-zod';
 
 class CreateTrackDto extends createZodDto(createTrackSchema) {}
@@ -25,8 +25,8 @@ export class TrackController {
   constructor(private trackService: TrackService) {}
 
   @Get()
-  findAll() {
-    return this.trackService.getAllTracks();
+  async findAll() {
+    return await this.trackService.getAllTracks();
   }
 
   @Get(':id')

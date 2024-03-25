@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import { AlbumService } from './album.service';
 import { createZodDto, ZodValidationPipe } from 'nestjs-zod';
-import { checkId } from 'src/utils';
+import { checkId } from '../utils';
 import { Album, createAlbumSchema } from './album.models';
 
 class CreateAlbumDto extends createZodDto(createAlbumSchema) {}

@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import { ArtistService } from './artist.service';
 import { Artist, createArtistSchema } from './artist.models';
-import { checkId } from 'src/utils';
+import { checkId } from '../utils';
 import { ZodValidationPipe, createZodDto } from 'nestjs-zod';
 
 class CreateArtistDto extends createZodDto(createArtistSchema) {}
@@ -25,8 +25,8 @@ export class ArtistController {
   constructor(private artistService: ArtistService) {}
 
   @Get()
-  findAll() {
-    return this.artistService.getAllArtists();
+  async findAll() {
+    return await this.artistService.getAllArtists();
   }
 
   @Get(':id')
