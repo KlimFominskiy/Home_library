@@ -3,7 +3,7 @@ version: '3.1'
 services:
   db:
     build:
-      context: ../Home_library/database
+      context: ./database
       dockerfile: Dockerfile
     command: ["postgres", "-c", "log_statement=all", "-c", "logging_collector=on", "-c", "log_directory=/var/log/postgresql"]
     image: postgres
