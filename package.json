@@ -10,15 +10,17 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "../Home_library/prisma migrate deploy && nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "../Home_library/prisma migrate deploy && node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest --config ./test/jest-e2e.json",
     "test:auth": "cross-env TEST_MODE=auth jest --config ./test/jest-e2e.json",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "prisma-generate": "../Home_library/prisma generate",
+    "docker:scan": "docker scout cves nodejs2023q2-service-api:latest"
   },
   "dependencies": {
     "@nestjs/common": "10.1.2",
@@ -28,6 +30,7 @@
     "@nestjs/mapped-types": "2.0.2",
     "@nestjs/platform-express": "10.1.2",
     "@nestjs/swagger": "7.1.4",
+    "@prisma/client": "^5.1.0",
     "bcrypt": "5.1.0",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
