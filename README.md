@@ -52,10 +52,10 @@ npm run docker:scan
 ## Pull docker image from docker hub
 
 ```
-docker pull lepy/nodejs2023q2-service-api:latest
+docker pull klimf/home_library-api:latest
 ```
 ```
-docker run -d --name my-container -p 4000:4000 lepy/nodejs2023q2-service-api:latest
+docker run -d --name my-container -p 4000:4000 klimf/home_library-api:latest
 ```
 ## Check user-defined bridge
 
@@ -64,7 +64,7 @@ docker network ls
 ```
 
 ```
-docker network inspect nodejs2023q2-service_app_network
+docker network inspect home_library_app_network
 ```
 
 ## Check volumes
